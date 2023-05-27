@@ -5,29 +5,63 @@ import { useFormik } from 'formik';
 
 const YoutubeForm = () => {
 
-  const formik = useFormik({
-    initialValues: {
-      name: ' ',
-      email: '',
-      channel: ''
-    },
-    onSubmit: values => {
-      console.log(formik.values)
 
+  // initial Values for the form
+  const initialValues = {
+    name: ' ',
+    email: '',
+    channel: ''
+  }
+
+  // 
+  const onSubmit = values => {
+    console.log(formik.values)
+  }
+
+  const validate = values => {
+    // values.name values.email values.channel
+    // error.name error.email error.channel
+    //error.name = 'this field is required'
+
+    let errors = {}
+
+    if (!values.name) {
+      errors.name = 'Required';
     }
+
+    if (!values.email) {
+      errors.name = 'Required';
+    } 
+    // else if ([a-z0-9]+@[a-z]+\.[a-z]{2,3}.test(values.email)) {
+    //   errors.email = 'Invalid Email'
+    // }
+
+    if (!values.channel) {
+      errors.name = 'Required';
+    }
+    return errors;
+  }
+
+
+  const formik = useFormik({
+    initialValues,
+    onSubmit,
+    validate
   });
 
   return (
     <form onSubmit={formik.handleSubmit} className='form-style'>
-      <label htmlFor='name'>name</label>
-      <input
-        type="text"
-        id='name'
-        name='name'
-        onChange={formik.handleChange}
-        value={formik.values.name}
-      />
-
+      <div>
+        <label htmlFor='name'>name</label>
+        <input
+          type="text"
+          id='name'
+          name='name'
+          onChange={formik.handleChange}
+          value={formik.values.name}
+        />
+        {formik.errors.name ? <div>{formik.errors.name}</div> : null}
+      </div>
 
       <label htmlFor='email'>E-mail</label>
       <input

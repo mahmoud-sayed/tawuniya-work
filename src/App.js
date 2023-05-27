@@ -1,5 +1,5 @@
 import './App.css';
-import YoutubeForm from './components/FormikStudy';
+import YoutubeForm from './components/FormikStudy/YoutubeForm';
 
 function App() {
   return (
