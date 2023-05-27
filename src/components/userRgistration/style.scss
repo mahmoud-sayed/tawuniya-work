@@ -1,0 +1,206 @@
+// general style
+@mixin divider() {
+    width: 100%;
+    opacity: 0.1;
+    /* Text/Black */
+    border: 1px solid #1A1C1F;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+
+
+//form style
+.registration {
+    width: 60rem;
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+
+    // isolation: isolate;
+
+    /* White */
+    background: #FFFFFF;
+
+    /* Shadow - Pop-Up */
+    box-shadow: 0px 35px 60px rgba(9, 30, 66, 0.15);
+    border-radius: 12px;
+
+
+    .registration-head {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .registration-head--title {
+
+            /* Heading En/Heading 4 */
+            font-family: 'Tawuniya';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 130%;
+            text-transform: capitalize;
+
+            /* or 31px */
+            letter-spacing: -0.03em;
+
+            /* Text/Black */
+            color: #1A1C1F;
+
+            /* Inside auto layout */
+            flex: none;
+            order: 0;
+            flex-grow: 1;
+        }
+
+        .pi-times {
+            color: #455560;
+            font-family: 700;
+            cursor: pointer;
+        }
+    }
+
+    .registration-form {
+        /* Auto layout */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+        gap: 0.5rem 1rem;
+        isolation: isolate;
+        margin-top: 1.5rem;
+
+        width: 100%;
+        height: 100%;
+
+        /* Neutral/N-Light */
+        background: #F2F3F5;
+        border-radius: 12px;
+
+        /* Inside auto layout */
+        flex: none;
+        order: 2;
+        align-self: stretch;
+        flex-grow: 0;
+
+        .registration-form-input-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .input {
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0px 20px;
+                gap: 4px;
+
+                width: 100%;
+                height: 4rem;
+
+                /* White */
+                background: #FFFFFF;
+
+                /* Shadow - Stacked */
+                border-radius: 8px;
+
+                /* Inside auto layout */
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                border: none;
+                outline: none;
+
+            }
+
+            .small-input {
+                grid-column: 0/1;
+            }
+
+            .full-input {
+                width: 100%;
+                grid-column: 1/3 !important;
+            }
+
+            // .error {
+            //     color: #f00;
+            //     background-color: rgb(255, 230, 230);
+            //     margin-left: 1rem;
+            //     width: fit-content;
+            // }
+
+            // .no-error {
+            //     color: #f00;
+            //     background-color: rgb(255, 230, 230);
+            //     margin-left: 1rem;
+            //     width: fit-content;
+            //     display: none
+            // }
+
+        }
+
+    }
+
+    .registration-divider {
+        @include divider();
+        margin: 1.5rem 0;
+    }
+
+    .registration-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+
+        .registration-control--cancel {
+            width: 6.125rem;
+            height: 3.375rem;
+            cursor: pointer;
+            border: 2px solid #6B47F5;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .registration-control--submit {
+            width: 100%;
+            height: 3.375rem;
+            background-color: #6B47F5;
+            border: 2px solid #6B47F5;
+            border-radius: 8px;
+            flex-basis: 1;
+            color: #fff;
+        }
+    }
+}
+
+// primereact style
+.p-multiselect-panel .p-multiselect-header {
+    display: none;
+}
+
+.p-multiselect-items-wrapper.widthHeight::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+.p-multiselect-items-wrapper.style::-webkit-scrollbar-track {
+    border: rgb(180, 180, 180);
+    background-color: #ff6536;
+}
+
+.p-multiselect-items-wrapper.style::-webkit-scrollbar-thumb {
+    background-color: #3677ef;
+    border: 1px solid rgb(193, 193, 193);
+}
