@@ -14,6 +14,12 @@ this file contain next functions...
 
 //function check the entered data length is more than 1 character after removing all side spaces
 export const moreThanOneCHR = (val) => {
-    const spacesRemoved = val.trim();
-    return spacesRemoved.length < 1;
+    return val.trim().length < 1;
 }
+
+// function check if the password contain [atleast one digit, atleast one small character, atleast one capital character, accept all letter from a to z and A to Z, length on the input must be not less than 8 letters]
+export const passwordCheck = (val) => {
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,}$/.test(val) ? true : 'please enter atleast (1 digit, 1 letter, 1 small letter, 1 capital letter) & password must be arleast 8 characters'
+}
+
+// function 
