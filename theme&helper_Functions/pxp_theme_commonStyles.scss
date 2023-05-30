@@ -1,0 +1,74 @@
+/*
+this file contain next things...
+1- all colors used in cxp-pxp project
+2- common styles used inside the project as classes
+3- styled function created with SCSS functions to include inside our components for faster designs
+*/
+
+// colors used >>
+
+//main text colors
+$primary_black_text_color: #1a1c1f; // primary text color used across the project
+$secondary_text_color: #455560; // secondary text color used across the project
+$primary_Bluish_Purple_text_color: #6b47f5; // primary uniq text color used across the project
+$secondary_Bluish_Purple: #795ceb; // secondary uniq text color used across the project
+
+//main general colors used across the project
+$primary_Bluish_Purple: #6b47f5;
+$secondary_Bluish_Purple: #795ceb;
+
+$danger: #ff4136; // warning status
+$success: #237b4b; // success status
+$update: #ff6d01; // update status
+$white: #ffffff;
+
+// disabled colors
+$disabled: #ccc; // color used for disabled buttons for example
+$disabled_border: #b3b9c3; //
+$disabled_text:#747474;
+
+// background colors used across the project
+$primary_background: #f2f3f5; // primary background color used across the project
+$secondary_background: #f8f6ff; //secondary background color used across the project
+
+//disabled
+
+//----------------------------------------------
+//fonts styles used
+//font wight
+$font-wight-400: 400; // = Normal (Regular)
+$font-wight-500: 500; //  = Medium
+$font-wight-600: 600; // = 	Semi Bold
+$font-wight-700: 700; // = 	Bold
+
+// font sizes in rem
+$font-size-48: 3rem; // = 48px
+$font-size-41: 2.5rem; // = 41px
+$font-size-32: 2rem; // = 32px
+$font-size-24: 1.5rem; // = 24px
+$font-size-20: 1.25rem; // = 20px
+$font-size-18: 1.125rem; // = 18px
+$font-size-16: 1rem; // = 16px
+$font-size-14: 0.875rem; // = 14px
+$font-size-12: 0.75rem; // = 12px
+$font-size-11: 0.688rem; // = 11px
+
+//----------------------------------------------
+// custom functions to include inside our project
+// button style
+@mixin customizable_button(
+  $width: 100%,
+  $background_color: $primary_Bluish_Purple,
+  $border_color: $primary_Bluish_Purple,
+  $text_color: $white,
+  $padding_top_bottom: 0rem,
+  $padding_right_left: 0rem
+) {
+  width: $width; // 100% for full width
+  padding: $padding_top_bottom $padding_right_left;
+  background-color: $background_color;
+  border: 2px solid $border_color;
+  border-radius: 8px;
+  color: $text_color;
+  cursor: pointer;
+}
